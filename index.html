@@ -3,603 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ajith Kanna — Full Stack Developer</title>
-<meta name="description" content="Full Stack Developer specialising in React, Node.js, and MySQL. Building clean, maintainable interfaces and learning Angular in depth.">
+<title>Ajithkanna</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ─── FEATURE 5: READING PROGRESS BAR ───
-     Width is controlled by --scroll-pct CSS custom property, updated on scroll by JS.
-     Sits above the sticky nav at z-index: 200. -->
-<div id="progress-bar" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100"></div>
+  <button id="theme-toggle" aria-label="Toggle Theme">
+    <svg id="theme-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+  </button>
 
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">ajith.kanna</a>
-    <ul class="nav-links-row">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-status">
-      <div class="status-pill">
-        <div class="status-dot"></div>
-        Open to roles
-      </div>
-      <!-- ─── FEATURE 6: THEME TOGGLE ───
-           aria-label updated dynamically by JS to reflect current state.
-           Icon content set via JS on init and on each toggle. -->
-      <button id="theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">☽</button>
+  <div id="holo-beam"></div>
+
+  <div id="companion-drone-wrapper">
+    <div class="drone-body-3d">
+      <div class="drone-eyes-slot"><div class="drone-eye"></div></div>
     </div>
   </div>
-</nav>
 
-<main>
-<div class="container">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-eyebrow">Full Stack Developer · React · Node.js · Angular (active)</div>
-  <h1 class="hero-heading" id="hero-heading">
-    <span class="hero-line"><span class="hero-line-inner">Clean code, clear logic,</span></span>
-    <span class="hero-line"><span class="hero-line-inner"><em>shipped and maintained</em></span></span>
-    <span class="hero-line"><span class="hero-line-inner">in production.</span></span>
-  </h1>
-    <p class="hero-sub">
-      I build <strong>full-stack web applications</strong> — React on the frontend,
-      Node.js and MySQL on the backend, with a focus on readable code and
-      DRY principles. I read official docs before reaching for Stack Overflow,
-      and I take ownership of features from first commit through
-      <strong>live production fixes</strong>.
-    </p>
-    <div class="hero-meta-row reveal">
-      <!-- data-count-target: the numeric end value
-           data-count-suffix: any non-numeric suffix (%, +, s, etc.)
-           data-count-prefix: any non-numeric prefix (+, -, ~)
-           The JS counter reads these and animates from 0 → target on intersection. -->
-      <div class="hero-meta-item">
-        <span class="meta-val" data-count-target="2" data-count-suffix="+">2+</span>
-        <span class="meta-label">Years in production</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="meta-val" data-count-target="10" data-count-suffix="+">10+</span>
-        <span class="meta-label">Technologies practised</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="meta-val" data-count-target="3">3</span>
-        <span class="meta-label">Production modules shipped</span>
-      </div>
-      <div class="hero-meta-item">
-        <span class="meta-val" data-count-target="1">1</span>
-        <span class="meta-label">Full-stack certification</span>
-      </div>
-    </div>
-    <div class="hero-cta-row reveal d1">
-      <a href="#work" class="btn btn-primary">View projects</a>
-      <a href="#contact" class="btn btn-secondary">Get in touch</a>
-      <a href="https://portfolio-v2-five-ochre.vercel.app/" target="_blank" rel="noopener" class="btn btn-secondary" style="font-family:var(--mono);font-size:0.75rem;">↗ Live portfolio</a>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="section-header">
-      <div class="section-label">About</div>
-      <div>
-        <h2 class="section-title">Full-stack roots,<br>frontend clarity.</h2>
-      </div>
-    </div>
-    <div class="about-grid">
-      <div></div>
-      <div class="about-body reveal">
-        <p>
-          I'm Ajith Kanna, a <strong>Full Stack Developer</strong> based in Chennai, India,
-          with hands-on experience building and maintaining real production applications — 
-          not just side projects. My stack is <strong>React on the frontend, Node.js and MySQL
-          on the backend</strong>, and I know how those two sides talk to each other.
-        </p>
-        <p>
-          My biggest professional habit is reading <strong>official documentation first</strong>.
-          Before reaching for a tutorial or a Stack Overflow snippet, I go to the source. 
-          That discipline keeps my understanding precise and my code predictable. 
-          I care about <strong>DRY principles, clean component structure</strong>, and writing 
-          code that the next developer can follow without a walkthrough.
-        </p>
-        <p>
-          Right now I'm investing serious time into <strong>Angular</strong> — studying its 
-          module system, dependency injection, and reactive forms from the official docs.
-          My long-term goal is to be equally fluent across React and Angular, so I can
-          make the right framework choice based on the project, not just habit.
-        </p>
-      </div>
-    </div>
-
-    <!-- Expertise table -->
-    <div style="margin-top:56px;">
-      <div class="expertise-row reveal">
-        <div class="expertise-area">Frontend</div>
-        <div class="expertise-detail">
-          <h4>React-first UI development</h4>
-          <p>Building component-driven UIs with React — hooks, state management, and 
-          integrating REST APIs. Experienced with Tailwind CSS and Ant Design for 
-          consistent, maintainable styling. Currently deepening Angular knowledge 
-          (modules, services, reactive forms) from official docs.</p>
-          <div class="tech-list">
-            <span class="tech-tag">React.js</span>
-            <span class="tech-tag">Angular</span>
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Ant Design</span>
-            <span class="tech-tag">TypeScript</span>
-          </div>
-        </div>
-      </div>
-      <div class="expertise-row reveal d1">
-        <div class="expertise-area">Backend</div>
-        <div class="expertise-detail">
-          <h4>Node.js APIs and server-side logic</h4>
-          <p>Writing RESTful APIs with Node.js and Express.js, integrating MySQL for 
-          data persistence. Familiar with JWT and OAuth2 for authentication flows. 
-          Some exposure to Spring Boot from coursework and certification training.</p>
-          <div class="tech-list">
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">OAuth2</span>
-            <span class="tech-tag">Spring Boot</span>
-          </div>
-        </div>
-      </div>
-      <div class="expertise-row reveal d2">
-        <div class="expertise-area">Language & Tooling</div>
-        <div class="expertise-detail">
-          <h4>JavaScript-first, TypeScript-aware</h4>
-          <p>Strong JavaScript fundamentals — the language itself, not just the framework.
-          Comfortable with TypeScript for type safety on both frontend and backend. 
-          Version control with Git, UI design reference with Figma, and deployment 
-          context with AWS.</p>
-          <div class="tech-list">
-            <span class="tech-tag">JavaScript (ES6+)</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Git</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">Figma</span>
-            <span class="tech-tag">Maven</span>
-          </div>
-        </div>
-      </div>
-      <div class="expertise-row reveal d3">
-        <div class="expertise-area">Currently Learning</div>
-        <div class="expertise-detail">
-          <h4>Angular — from the official docs</h4>
-          <p>Systematically working through Angular's official documentation: dependency 
-          injection, NgModules, RxJS observables, reactive forms, and the Angular CLI 
-          project structure. Goal: build fluency comparable to my React knowledge 
-          by reading primary sources, not just tutorials.</p>
-          <div class="tech-list">
-            <span class="tech-tag">Angular DI</span>
-            <span class="tech-tag">NgModules</span>
-            <span class="tech-tag">RxJS</span>
-            <span class="tech-tag">Reactive Forms</span>
-            <span class="tech-tag">Angular CLI</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK -->
-  <section class="section" id="work">
-    <div class="section-header">
-      <div class="section-label">Projects</div>
-      <div>
-        <h2 class="section-title">Things I built,<br>with context.</h2>
-        <p class="section-desc">
-          Real work from real codebases. The problems I ran into and what I learned solving them.
-        </p>
-      </div>
-    </div>
-
-    <!-- Project 1 -->
-    <div class="project-card reveal">
-      <div class="project-header">
-        <div class="project-name">OKR & Goal Setting Module</div>
-        <div class="project-type">Production Feature · Cordova Educational Solutions · 2024</div>
-      </div>
-
-      <div class="impact-bar">
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="3">3</span>
-          <span class="impact-context">Modules built end-to-end<br>Goal Setting, Strategy Map, Growth Tracking</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="2">2</span>
-          <span class="impact-context">Stack layers owned<br>React frontend + Node/MySQL backend</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="1">1</span>
-          <span class="impact-context">Live production app<br>maintained and improved daily</span>
-        </div>
-      </div>
-
-      <p class="project-desc">
-        An internal performance management platform for educational institutions. 
-        I was brought in to build <strong>new feature modules on top of an existing 
-        production codebase</strong> — Goal Setting, Strategy Map, and Growth Tracking — 
-        while simultaneously maintaining and fixing bugs in the live application. 
-        Working on a production system that real users depend on daily meant every change 
-        had to be careful, tested, and reversible.
-      </p>
-
-      <div class="arch-callout">
-        <div class="arch-callout-label">Learning log — managing state across modules</div>
-        <p>
-          The biggest challenge was sharing state between the three new modules without 
-          creating brittle prop-drilling chains. I had to properly understand React's 
-          <strong>Context API</strong> — not just copy-paste patterns, but read the docs 
-          to understand when context re-renders and when to split contexts to avoid 
-          unnecessary updates. That investigation directly improved how I structured the 
-          Goal Setting form and its connection to the Strategy Map view.
-        </p>
-      </div>
-
-      <div class="decision-log">
-        <div class="decision-log-header">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v5l3 2" stroke="#8a8a80" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="#8a8a80" stroke-width="1.2"/></svg>
-          <span>Technical decisions</span>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">Ant Design</span>
-          <div class="decision-reason">The existing codebase already used Ant Design throughout. Staying consistent meant users got a uniform experience and I didn't introduce a second component library to maintain.</div>
-          <div class="decision-outcome">New modules felt native to the existing app. No style conflicts or bundle bloat from mixing libraries.</div>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">MySQL stored procedures</span>
-          <div class="decision-reason">Some Growth Tracking queries joined four tables. Moving the aggregation logic into the database layer kept the Node.js controller clean and the response time acceptable.</div>
-          <div class="decision-outcome">API response stayed readable; complex join logic lived in one place — the database — rather than scattered across service files.</div>
-        </div>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">Express.js</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Ant Design</span>
-          <span class="tech-tag">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ajithkanna1234" target="_blank" rel="noopener" class="proj-link">
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H4M10 1V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="project-card reveal d1">
-      <div class="project-header">
-        <div class="project-name">CRUD Application Modules</div>
-        <div class="project-type">Frontend Development · CRUD Operations pvt · 2023–2024</div>
-      </div>
-
-      <div class="impact-bar">
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="12">12</span>
-          <span class="impact-context">Months in role<br>Jun 2023 – May 2024</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="4">4</span>
-          <span class="impact-context">Core React concepts<br>deepened on live systems</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="1">1</span>
-          <span class="impact-context">Real codebase<br>bugs fixed in production</span>
-        </div>
-      </div>
-
-      <p class="project-desc">
-        My first professional role. The job was implementing <strong>frontend CRUD interfaces</strong> 
-        for application modules — forms, data tables, create/edit/delete flows connected to APIs. 
-        Simple in concept, clarifying in practice: this is where I learned the difference 
-        between React components that technically work and components that are actually 
-        <strong>maintainable and predictable</strong>. I also got early exposure to 
-        debugging in live systems, which is a different skill from debugging in development.
-      </p>
-
-      <div class="arch-callout">
-        <div class="arch-callout-label">Learning log — understanding React rendering</div>
-        <p>
-          Early on, I was causing unnecessary re-renders on every keystroke in form components. 
-          I went back to the React documentation on <strong>controlled vs. uncontrolled components</strong> 
-          and reconciliation. Understanding that React re-renders a component tree — not just 
-          one element — changed how I thought about where to put state. I started placing 
-          state closer to where it was used and stopped lifting everything to the top. 
-          That habit has carried into every project since.
-        </p>
-      </div>
-
-      <div class="decision-log">
-        <div class="decision-log-header">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v5l3 2" stroke="#8a8a80" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="#8a8a80" stroke-width="1.2"/></svg>
-          <span>What I focused on</span>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">Official React docs</span>
-          <div class="decision-reason">When I didn't understand why something behaved unexpectedly, I read the official documentation rather than just trying random fixes. Slower initially, but it built a model I could reason from.</div>
-          <div class="decision-outcome">Developed a mental model for React's component lifecycle that made debugging faster — I could predict what would happen before running code.</div>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">DRY component structure</span>
-          <div class="decision-reason">Noticed repeated form layouts across different modules. Extracted a reusable FormField wrapper, cutting duplicated code and making future changes one-place edits.</div>
-          <div class="decision-outcome">Introduced me to the real value of abstraction: not cleverness, but reducing the number of places where a single concept lives.</div>
-        </div>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">REST APIs</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Git</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ajithkanna1234" target="_blank" rel="noopener" class="proj-link">
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H4M10 1V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card reveal d2">
-      <div class="project-header">
-        <div class="project-name">Personal Portfolio v2</div>
-        <div class="project-type">Personal Project · Deployed on Vercel · 2024</div>
-      </div>
-
-      <div class="impact-bar">
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="1">1</span>
-          <span class="impact-context">Live deployment<br>portfolio-v2-five-ochre.vercel.app</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="5" data-count-suffix="+">5+</span>
-          <span class="impact-context">Technologies used<br>end-to-end by myself</span>
-        </div>
-        <div class="impact-stat">
-          <span class="impact-num" data-count-target="100" data-count-suffix="%">100%</span>
-          <span class="impact-context">Self-directed<br>design through deployment</span>
-        </div>
-      </div>
-
-      <p class="project-desc">
-        A full-stack personal portfolio built and deployed independently. The point of this 
-        project wasn't just to have a portfolio — it was to own <strong>every decision from 
-        design to deployment</strong> without a team or a ticket. That means thinking about 
-        project structure, choosing tools deliberately, and figuring out hosting and CI on my own. 
-        It's deployed live on Vercel and reflects my current capabilities without embellishment.
-      </p>
-
-      <div class="arch-callout">
-        <div class="arch-callout-label">Technical challenge — API integration without a backend template</div>
-        <p>
-          The contact form needed to send email without a pre-configured backend. Rather than 
-          reaching for a tutorial, I read the <strong>official documentation for the email 
-          service API</strong> and for Next.js API routes. Understanding how the request/response 
-          cycle worked from the docs — not from a copy-pasted snippet — meant I understood 
-          the error messages when things went wrong and could fix them myself.
-        </p>
-      </div>
-
-      <div class="decision-log">
-        <div class="decision-log-header">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v5l3 2" stroke="#8a8a80" stroke-width="1.2" stroke-linecap="round"/><circle cx="6" cy="6" r="5" stroke="#8a8a80" stroke-width="1.2"/></svg>
-          <span>Technical decisions</span>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">Next.js + Vercel</span>
-          <div class="decision-reason">Wanted to use a framework I'm actively learning beyond React, and Vercel's deployment model makes the feedback loop fast. Zero config for a solo project is the right tradeoff.</div>
-          <div class="decision-outcome">Deployed and iterable in an afternoon. The short cycle time meant I could focus on quality over infrastructure.</div>
-        </div>
-        <div class="decision-item">
-          <span class="decision-choice chosen">Tailwind CSS</span>
-          <div class="decision-reason">Tailwind keeps styles co-located with markup. For a solo project, having the design visible alongside the HTML structure reduces context-switching.</div>
-          <div class="decision-outcome">Consistent visual language without writing a single custom CSS file. Manageable without a design system at this scale.</div>
-        </div>
-      </div>
-
-      <div class="project-footer">
-        <div class="project-stack">
-          <span class="tech-tag">Next.js</span>
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">Tailwind CSS</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">Vercel</span>
-        </div>
-        <div class="project-links">
-          <a href="https://portfolio-v2-five-ochre.vercel.app/" target="_blank" rel="noopener" class="proj-link">
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H4M10 1V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            Live site
-          </a>
-          <a href="https://github.com/ajithkanna1234" target="_blank" rel="noopener" class="proj-link">
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H4M10 1V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
-            GitHub
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="section" id="experience">
-    <div class="section-header">
-      <div class="section-label">Experience</div>
-      <div>
-        <h2 class="section-title">Where I've worked<br>and what I did.</h2>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-left">
-        <div class="exp-company">Cordova Educational Solutions</div>
-        <div class="exp-period">Aug 2024 – Present</div>
-        <div class="exp-location">Chennai, India</div>
-      </div>
-      <div>
-        <div class="exp-role">Software Developer</div>
-        <p class="exp-desc">
-          Working on a live production application — React on the frontend, 
-          Node.js and MySQL on the backend. Responsible for both maintaining 
-          existing functionality and building new product modules from scratch, 
-          in a codebase that real users depend on every day.
-        </p>
-        <ul class="exp-wins">
-          <li>Built three new modules end-to-end: <strong>Goal Setting, Strategy Map, and Growth Tracking</strong> — owning both the React UI and the Node.js/MySQL backend for each</li>
-          <li>Maintained existing features and <strong>fixed production bugs</strong> — learning to diagnose issues in a live system where breaking things has real consequences</li>
-          <li>Improved application performance and reliability through targeted fixes identified during maintenance work</li>
-          <li>Collaborated directly with cross-functional teams to translate business requirements into working features</li>
-        </ul>
-        <div class="tech-list">
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">Ant Design</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Express.js</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-item reveal d1">
-      <div class="exp-left">
-        <div class="exp-company">CRUD Operations pvt</div>
-        <div class="exp-period">Jun 2023 – May 2024</div>
-        <div class="exp-location">Chennai, India</div>
-      </div>
-      <div>
-        <div class="exp-role">Junior Developer</div>
-        <p class="exp-desc">
-          First professional role. Got my hands on real codebases early — implementing 
-          frontend features, resolving bugs in running applications, and developing 
-          a working understanding of how React behaves in practice, not just in tutorials.
-        </p>
-        <ul class="exp-wins">
-          <li>Implemented <strong>frontend CRUD operations</strong> for multiple application modules — forms, data tables, and API-connected views</li>
-          <li>Assisted in resolving <strong>real-time bugs</strong> in ongoing production projects — first exposure to debugging under actual constraints</li>
-          <li>Developed practical knowledge of React hooks, component lifecycle, and state management through hands-on work</li>
-          <li>Built habits around code maintenance and debugging that carried into the next role</li>
-        </ul>
-        <div class="tech-list">
-          <span class="tech-tag">React.js</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">REST APIs</span>
-          <span class="tech-tag">Git</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRINCIPLES -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-label">How I work</div>
-      <div>
-        <h2 class="section-title">Principles I actually<br>try to follow.</h2>
-      </div>
-    </div>
-    <div class="principles-grid reveal">
-      <div class="principle-card">
-        <div class="principle-num">01</div>
-        <div class="principle-title">Read the docs first</div>
-        <p class="principle-body">Before copying a Stack Overflow snippet, I read the official 
-        documentation. It's slower at first, but it builds a mental model that makes me 
-        faster and more accurate over time. I'd rather understand one tool deeply than 
-        skim five tutorials.</p>
-      </div>
-      <div class="principle-card">
-        <div class="principle-num">02</div>
-        <div class="principle-title">DRY is a discipline, not a rule</div>
-        <p class="principle-body">Don't repeat yourself — not because it's a principle to follow, 
-        but because repeated code means multiple places to update when something changes. 
-        I look for duplication in my own work and refactor it, even when the deadline 
-        doesn't demand it.</p>
-      </div>
-      <div class="principle-card">
-        <div class="principle-num">03</div>
-        <div class="principle-title">Own what you ship</div>
-        <p class="principle-body">If I build it and it breaks in production, that's my bug to fix.
-        I don't consider a feature done when the PR is merged — I consider it done when 
-        it's running cleanly in the live environment. Responsibility doesn't end at deployment.</p>
-      </div>
-      <div class="principle-card">
-        <div class="principle-num">04</div>
-        <div class="principle-title">Stay curious about the fundamentals</div>
-        <p class="principle-body">Frameworks come and go. JavaScript, HTTP, the DOM, and how browsers 
-        render pages — those stick around. I invest time understanding what's underneath 
-        the abstractions I use every day, because that's what lets me debug effectively 
-        when the abstraction leaks.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div class="contact-grid">
-      <div class="section-label" style="padding-top:8px;">Contact</div>
-      <div>
-        <h2 class="reveal" style="font-family:var(--serif);font-size:2rem;font-weight:400;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.15;">
-          Let's talk about<br>what you're building.
-        </h2>
-        <p class="reveal d1" style="font-size:0.9rem;color:var(--text-2);line-height:1.75;margin-bottom:28px;font-weight:300;max-width:420px;">
-          I'm open to full-stack or frontend roles where I can keep growing — 
-          ideally a team that cares about code quality and isn't afraid to let 
-          junior developers own real features. Currently based in Chennai.
-        </p>
-        <a href="mailto:ajith.kanna.dev@gmail.com" class="contact-email reveal d1">ajith.kanna.dev@gmail.com</a>
-        <div class="contact-links reveal d2">
-          <a href="https://github.com/ajithkanna1234" target="_blank" rel="noopener" class="contact-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
-            GitHub
-          </a>
-          <a href="#" class="contact-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://portfolio-v2-five-ochre.vercel.app/" target="_blank" rel="noopener" class="contact-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Portfolio
-          </a>
-          <a href="tel:6381811595" class="contact-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
-            6381811595
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <span class="footer-copy">© 2025 Ajith Kanna · ajith.kanna.dev@gmail.com</span>
-    <span class="footer-right">Chennai, India · Open to remote</span>
+  <div id="hologram-skills-card">
+    <h1>Technical S<span class="highlight-title">ki</span>lls</h1>
+    <!-- <p style="font-size:.95rem;margin-bottom:24px;">Uplink established. Displaying developer node metrics:</p> -->
+    <div id="skills-groups"></div>
   </div>
-</footer>
 
+  <div id="viewport">
+    <div id="world">
+      <div id="floor-shadow"></div>
+    </div>
+  </div>
 
-<script src="js/script.js" defer></script>
+  <main>
+    <section id="hero-section">
+      <div class="hero-content">
+        
+        <div class="live-badge">
+          <span class="pulse-dot"></span>
+          <span class="badge-text">Online</span>
+        </div>
+
+        <div class="hero-title-group">
+          <span class="hero-name">AJITH KANNA</span>
+          <span class="hero-role">Fullstack Developer</span>
+        </div>
+
+        <p class="hero-desc">
+        
+        </p>
+        
+        <div class="metrics-grid" id="metrics-grid"></div>
+
+        <div class="hero-actions">
+          <a href="#exp-section" class="contact-btn primary-btn">Explore Mission Logs ↓</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills-section"></section>
+
+    <section id="exp-section">
+      <div>
+        <h1>Mission <span class="highlight-title">Hi</span>story</h1>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section id="projects-section">
+      <div>
+        <h1><span class="highlight-title">De</span>ployed Builds</h1>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact-section">
+      <div>
+        <div>
+          <h1>Contact <span class="highlight-title">Me</span></h1>
+        </div>
+        <div class="glass-card footer-card">
+          <div class="footer-info">
+            <p style="font-size:.95rem; margin-bottom:0;">Have a question, an opportunity, or a project in mind? I am currently looking for new challenges and am always open to discussing creative ideas. Let's talk!</p>
+          </div>
+          <div class="contact-links footer-links" id="footer-links"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="script.js"></script>
 </body>
 </html>
